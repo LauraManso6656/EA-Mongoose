@@ -48,7 +48,7 @@ async function runDemo() {
        
         const deptWithOrg = await departmentService.getById(dept1._id!.toString());
         
-        console.log('🔍 Detailed Department (Populated):');
+        console.log(' Detailed Department (Populated):');
         console.log(`- Dept: ${deptWithOrg?.name}`);
 
        
@@ -60,7 +60,7 @@ async function runDemo() {
 
         // 4.4 UPDATE
         const updatedDept = await departmentService.update(dept1._id!.toString(), { name: 'Fullstack Devs' });
-        console.log(`📝 Updated Dept Name: ${updatedDept?.name}`);
+        console.log(` Updated Dept Name: ${updatedDept?.name}`);
 
         // --- 5. USERS ---
         const usersData = [
