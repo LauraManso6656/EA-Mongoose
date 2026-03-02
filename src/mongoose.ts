@@ -40,7 +40,7 @@ async function runDemo() {
         } as any);
 
         console.log(` Created Departments: ${dept1.name}, ${dept2.name}`);
-
+        //4.2 LIST ALL
         const allDepts = await departmentService.listAll();
         console.log(' All Departments (Lean objects):', allDepts);
 
@@ -61,6 +61,11 @@ async function runDemo() {
         // 4.4 UPDATE
         const updatedDept = await departmentService.update(dept1._id!.toString(), { name: 'Fullstack Devs' });
         console.log(` Updated Dept Name: ${updatedDept?.name}`);
+
+        //4.5 DELETE
+        await departmentService.delete(dept2._id!.toString());
+        console.log(` Deleted Department: ${dept2.name}`);
+        
 
         // --- 5. USERS ---
         const usersData = [
