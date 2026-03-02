@@ -14,7 +14,7 @@ export const departmentService = {
     if (!Types.ObjectId.isValid(id)) return null;
 
     return await DepartmentModel.findById(id)
-      .populate('organization') // REQUISITO: Sustituye el ID por el objeto de la empresa
+      .populate('organization') // con populate Sustituye el ID por el objeto de la empresa
       .exec();
   },
 
@@ -34,7 +34,6 @@ export const departmentService = {
 
   // LIST ALL: Devuelve todos los departamentos con .lean() para obtener objetos planos de JS
   async listAll() {
-    // REQUISITO: .lean() para obtener objetos planos de JS en vez de documentos de Mongoose
     return await DepartmentModel.find().lean();
   }
 };
